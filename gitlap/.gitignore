@@ -1,0 +1,10 @@
+*.log
+./data
+./logs
+./node_modules
+./config
+./.env../.DS_Store
+.DS_Store
+config/
+data/
+logs/

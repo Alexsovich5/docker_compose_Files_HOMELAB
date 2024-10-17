@@ -1,0 +1,18 @@
+---
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab-demo1
+    restart: unless-stopped
+    hostname: "gitlab-demo-1"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+    ports:
+    
+      - "2424:22"
+    volumes:
+      - ./config:/etc/gitlab
+      - ./data:/var/opt/gitlab
+      - ./logs:/var/log/gitlab
+    shm_size: "256"
